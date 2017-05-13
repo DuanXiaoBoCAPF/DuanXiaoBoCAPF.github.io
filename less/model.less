@@ -1,0 +1,188 @@
+@charset "utf-8";
+//定义所有页面模块
+*,::before,::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+//reset重置样式
+body{
+  font-size: 14px;
+  font-family: "Microsoft YaHei" ,sans-serif;
+}
+.f_left{
+  float: left;
+}
+.f_right{
+  float: right;
+}
+.clearfix::before,
+.clearfix::after{
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+//model模块样式
+//主题容器
+.su-layout{
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  height: 50px;
+}
+//头部搜索部分
+.su-search{
+  width: 100%;
+  height: 90/@bs;
+  background: @suColor;
+  position: relative;
+  a{
+    width: 90/@bs;
+    height: 90/@bs;
+    position: absolute;
+    top: 0;
+    &.icon-category{
+      background: url("../images/icon_category.png") no-repeat center / 44/@bs 70/@bs;
+      left: 0;
+    };
+    &.icon-car{
+      background:url("../images/icon_cart.png") no-repeat center / 63/@bs 68/@bs;
+      right: 0;
+    };
+  }
+  form{
+    width: 100%;
+    padding: 0 90/@bs;
+    .icon-search{
+      background: url("../images/icon_search.png") no-repeat center / 27/@bs 28/@bs;
+      position: absolute;
+      left: 1rem;
+      top: 30/@bs;
+      width: 30/@bs;
+      height: 30/@bs;
+    };
+    input{
+      width: 100%;
+      height: 60/@bs;
+      margin-top: 15/@bs;
+      background: rgba(255,255,255,0.6);
+      border: none;
+      border-radius: 5px;
+      font-size: 24/@bs;
+      padding-left: 50/@bs;
+    };
+  }
+}
+//轮播图部分
+.su-banner{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  ul{
+    transform: translateX(-100%/10);
+    -webkit-transform: translateX(-100%/10);
+    &:first-child{
+      width: 10*100%;
+      li{
+        width: 100%/10;
+        float: left;
+        a{
+            display: block;
+            width: 100%;
+          img{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &:last-child{
+      position: absolute;
+      right: 20/@bs;
+      bottom: 20/@bs;
+      li{
+        width: 12/@bs;
+        height: 12/@bs;
+        border-radius: 6/@bs;
+        background-color: #fff;
+        float: left;
+        margin: 0 5/@bs;
+        &.now{
+          background-color:@suColor;
+        }
+      }
+    }
+  }
+}
+//导航部分
+.su-nav{
+  width: 100%;
+  ul{
+    width: 100%;
+    padding: 20/@bs 0;
+    li{
+      width: 20%;
+      float: left;
+      a{
+        display: block;
+        width: 100%;
+        img{
+          display: block;
+          margin: 0 auto;
+          width: 80/@bs;
+          height: 80/@bs;
+        }
+        p{
+
+          font-size: 24/@bs;
+          padding: 12/@bs 0;
+          text-align: center;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+//底部页签
+.su-tabs{
+  width: 100%;
+  height: 100@bs;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  ul{
+    width: 100%;
+    li{
+      width: 20%;
+      float: left;
+      text-align: center;
+      a{
+        display: block;
+        width: 100%;
+        span{
+          font-size: 40/@bs;
+          margin-top: 10/@bs;
+          color: @suColor;
+        }
+        p{
+          color: #666;
+          font-size: 24/@bs;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@charset "utf-8";
+//定义方法
+
+
+//.adapterFuc(@deviceWidth:750px){
+//  @media (min-width: @deviceWidth) {
+//    html{
+//      font-size: @deviceWidth/@psdWidth*@baseSize;
+//    }
+//  }
+//}
+//.adapterFuc();
+
+.adapterFuc(@index) when (@index <= length(@deviceWidthArr)){
+  @media (min-width: extract(@deviceWidthArr,@index)) {
+    html{
+      font-size: extract(@deviceWidthArr,@index)/@psdWidth*@baseSize;
+    }
+  }
+  //自调用(注意给予范围否则是死循环)
+  .adapterFuc(@index+1);
+};
